@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SanaMind',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -30,7 +30,123 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomeScreen(),
+    );
+  }
+}
+
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/background.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 20,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ForumScreen()),
+                  );
+                },
+                child: Text('Forumuri și grupuri de discuții'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LiveChatScreen()),
+                  );
+                },
+                child: Text('Chat live'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ResourcesScreen()),
+                  );
+                },
+                child: Text('Resurse și articole'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => JournalScreen()),
+                  );
+                },
+                child: Text('Jurnal personal'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+class ForumScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Forumuri'),
+      ),
+      body: Center(
+        child: Text('Lista forumurilor va fi afișată aici.'),
+      ),
+    );
+  }
+}
+
+class LiveChatScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Forumuri'),
+      ),
+      body: Center(
+        child: Text('Lista forumurilor va fi afișată aici.'),
+      ),
+    );
+  }
+}
+
+class ResourcesScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Forumuri'),
+      ),
+      body: Center(
+        child: Text('Lista forumurilor va fi afișată aici.'),
+      ),
+    );
+  }
+}
+
+class JournalScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Forumuri'),
+      ),
+      body: Center(
+        child: Text('Lista forumurilor va fi afișată aici.'),
+      ),
     );
   }
 }
